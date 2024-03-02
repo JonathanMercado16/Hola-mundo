@@ -1,0 +1,52 @@
+@startuml mascota
+
+class Mascota { 
+    - salud : int 
+    + Comer()
+}
+class Alimento
+class Salud
+class Diversion
+class Estamina
+class Dormir
+class Act_SaludFisica
+class Higiene
+class SaludFisica
+class SaludMental
+class Liquido 
+class Solido
+class EstadoMental
+class Felicidad
+class Tristeza
+class Enojo
+class Resentimiento
+class Desilusion
+class Limpio
+class Sucio
+class EstadoFisico
+
+
+Mascota "1" *-- "1" Salud
+Salud <|-- SaludFisica
+Salud <|-- SaludMental
+SaludMental "1" *-- "1" EstadoMental
+EstadoFisico <|-- Alimento
+EstadoFisico <|-- Estamina
+Estamina "1" o-- "1" Dormir
+EstadoFisico <|-- Higiene
+Estamina "1" o-- "1" Act_SaludFisica
+Alimento "1" o-- "1" Liquido
+Alimento "1" o-- "1" Solido
+EstadoMental <|-- Felicidad
+EstadoMental <|-- Enojo
+EstadoMental <|-- Tristeza
+Felicidad "1" o-- "1" Diversion
+Tristeza "1" o-- "1" Desilusion
+Enojo "1" o-- "1" Resentimiento
+Higiene "1" o-- "1" Limpio
+Higiene "1" o-- "1" Sucio
+SaludFisica "1" *-- "1" EstadoFisico 
+SaludFisica "1" *-- "1" SaludMental
+SaludMental "1" *-- "1" SaludFisica
+
+@enduml
